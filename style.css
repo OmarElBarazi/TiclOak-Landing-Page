@@ -2,102 +2,137 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-section {
-  position: relative;
+:root {
+  --first-color: #333d51;
+  --second-color: #f3edd9;
+  --third-color: #cbd0d8;
+  --four-color: #f4f3ea;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--second-color);
+}
+
+.navbar {
+  height: 70px;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: antiquewhite;
-  transition: 0.5s;
-}
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 5px 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-}
-
-header .logo {
+  padding: 0px 30px;
+  background-color: var(--first-color);
   position: relative;
-  max-width: 100px;
-  max-height: 100px;
-}
-header ul {
-  position: relative;
-  display: flex;
 }
 
-header ul li {
-  list-style: none;
+.navbar .nav-header {
+  display: inline;
 }
 
-header ul li a {
+.navbar .nav-header .nav-logo {
   display: inline-block;
-  color: #fff;
-  font-weight: 400;
-  margin-left: 40px;
+  margin-top: 1px;
+}
+
+.navbar .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.navbar .nav-links .loginButton {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  color: var(--first-color);
+  background-color: var(--four-color);
+  border: none;
+  font-size: 17px;
+}
+
+.navbar .nav-links a {
+  padding: 10px 12px;
   text-decoration: none;
+  color: var(--four-color);
+  font-weight: 200;
+  font-size: 13px;
 }
 
-.content{
-    position: relative;
-    width:100%;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
+.navbar .nav-links a:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  border-radius: 5px;
 }
 
-.content .textBox{
-    position: relative;
-    max-width:600px ;
-    padding-left: 30px;
+/*Responsive Navbar button*/
+.navbar #nav-check,
+.navbar .nav-btn {
+  display: none;
 }
 
-.content .textBox h2{
-    font-size: 4em;
-    line-height: 1.5em;
-    font-weight:900;
-    text-transform: uppercase;
-}
-
-.content .textBox h2 span {
-    font-size: 2em;
-}
-
-.content .textBox a{
+@media (max-width: 690px) {
+  .navbar .nav-btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 8px 20px;
-    background-color: #333;
-    border-radius: 40px;
-    color:#fff;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
 
-.content .imgBox{
-    width: 600px;
-    display: flex;
-    padding-right: 200px;
-    margin-top: 50px;
-    justify-content: flex-end;
-}
+  .navbar .nav-btn label {
+    display: inline-block;
+    width: 80px;
+    height: 70px;
+    padding: 25px;
+  }
 
-.content .imgBox img{
-    max-width: 400px;
-    height: 300px;
-    border-radius: 20px;
+  .navbar .nav-btn label span {
+    display: block;
+    height: 10px;
+    width: 25px;
+    /* border-top: 0px solid var(--four-color); */
+  }
+
+  .navbar .nav-btn label:hover,
+  .navbar .nav-btn label span,
+  .navbar #nav-check:checked ~ .nav-btn label {
+    background-color: var(--second-color);
+    border-top: 4px solid var(--first-color);
+  }
+
+  .navbar .nav-links {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 50%;
+    background-color: var(--first-color);
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 70px;
+    right: 0px;
+  }
+
+  .navbar .nav-links a {
+    display: block;
+  }
+
+  /*when button not checked handle toggle*/
+  .navbar #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+
+  /*when button is checked handle toggle*/
+  .navbar #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  .navbar .nav-links .loginButton{
+    margin:100px 0px 0px 0px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+  }
 }

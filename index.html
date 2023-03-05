@@ -5,29 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>TiclOack</title>
+    <title>Document</title>
   </head>
   <body>
-    <section class="sec">
-      <header>
-        <a href="#"><img src="TiclOak-PhotoRoom.png" class="logo" /></a>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </header>
-      <div class="content">
-        <div class="textBox">
-          <h2>Brand new Watches in <br><span>TiclOak</span></h2>
-          <p>In our page we display a brand new watches with some of their features,prices, etc..</p>
-          <a href="#">View All Watches</a>
-        </div>
-        <div class="imgBox">
-            <img src="./Images/__-drz-__-pD_BtL20y48-unsplash.jpg">
+    <!--Header of Page-->
+    <div class="navbar">
+      <div class="nav-header">
+        <!--NavBar Logo-->
+        <div class="nav-logo">
+          <a href="#">
+            <img src="TiclOak-PhotoRoom.png" width="100px" alt="logo" />
+          </a>
         </div>
       </div>
-    </section>
+      <!--responsive navbar toggle button-->
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <!--NavBar items-->
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <button class="loginButton">Login</button>
+      </div>
+    </div>
   </body>
 </html>
