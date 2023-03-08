@@ -31,7 +31,12 @@ body {
 
 .navbar .nav-header .nav-logo {
   display: inline-block;
-  margin-top: 1px;
+  margin-top: -14px;
+  margin-left: -25px;
+}
+
+.navbar .nav-header .nav-logo .logo {
+  width: 130px;
 }
 
 .navbar .nav-links {
@@ -89,16 +94,15 @@ body {
 
   .navbar .nav-btn label span {
     display: block;
-    height: 10px;
-    width: 25px;
-    /* border-top: 0px solid var(--four-color); */
+    height: 7px;
+    width: 20px;
+    border-top: 2px solid var(--four-color);
   }
 
   .navbar .nav-btn label:hover,
-  .navbar .nav-btn label span,
   .navbar #nav-check:checked ~ .nav-btn label {
-    background-color: var(--second-color);
-    border-top: 4px solid var(--first-color);
+    background-color: var(--first-color);
+    /* border-top: 3px solid var(--first-color); */
   }
 
   .navbar .nav-links {
@@ -107,7 +111,7 @@ body {
     text-align: center;
     width: 50%;
     background-color: var(--first-color);
-    transition: all 0.3s ease-in;
+    transition: all 0.5s ease-in;
     overflow-y: hidden;
     top: 70px;
     right: 0px;
@@ -124,15 +128,75 @@ body {
 
   /*when button is checked handle toggle*/
   .navbar #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 70px);
+    height: 300px;
     overflow-y: auto;
+    z-index: 2;
   }
 
-  .navbar .nav-links .loginButton{
-    margin:100px 0px 0px 0px;
-    padding: 10px 20px;
-    font-size: large;
-    font-weight: bold;
+  .navbar .nav-links .loginButton {
+    margin: 50px 0px 0px 0px;
+    font-size: smaller;
     border-radius: 10px;
+  }
+}
+
+/*Body of Page CSS*/
+
+.primary-content {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--first-color);
+  border: 1px solid var(--first-color);
+  filter: brightness(90%);
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+}
+
+.primary-content p {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  color: var(--four-color);
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.primary-content .primary-image{
+background-image: url(./Images/image3-oldClassicWatch.jpg);
+border-radius: 30px;
+margin-left: 40px;
+width: 50%;
+}
+
+@media (max-width: 600px) {
+  .primary-content{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .primary-content p {
+    font-size: 1em;
+    line-height: 1.6em;
+    width: 100%;
+    margin: 0px;
+  }
+  .primary-content .primary-image{
+    margin-left: 0px;
+    width: 100%;
+    height:400px;
+    margin-top: 50px;
+
+  }
+}
+
+@media (max-width: 450px) {
+  .primary-content p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    width: 100%;
+    padding: 20px;
+    margin: 0px 0px 0px 0px;
   }
 }
