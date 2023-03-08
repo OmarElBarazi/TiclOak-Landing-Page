@@ -141,6 +141,11 @@ body {
 }
 
 /*Body of Page CSS*/
+.body{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
 
 .primary-content,
 .secondary-content {
@@ -160,6 +165,9 @@ body {
   position: relative;
   z-index: 1;
   width: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   color: var(--first-color);
   font-size: 1.2em;
   text-align: justify;
@@ -169,14 +177,16 @@ body {
 .primary-content .primary-image,
 .secondary-content .secondary-image {
   background-image: url(./Images/image3-oldClassicWatch.jpg);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  border-radius: 20px;
   margin-left: 40px;
   margin-top: 25px;
-  width: 250px;
-  height: 250px;
+  background-size: 300px 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 300px;
 }
 
 .secondary-content {
